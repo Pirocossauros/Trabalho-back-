@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    // Criando um objeto que associa alunos às suas médias
+let alunos = {
+    "joão": 10,
+    "juliana": 8,
+    "ana": 7.5,
+    "caio": 9
+};
+
+// Função que busca a média de um aluno
+function buscarMedia(nome) {
+    // Normaliza o nome para letras minúsculas
+    let nomeFormatado = nome.toLowerCase();
+
+    // Verifica se o aluno existe no objeto
+    if (alunos.hasOwnProperty(nomeFormatado)) {
+        let mediaAluno = alunos[nomeFormatado];
+        return `✅ O aluno ${nome} tem média final de ${mediaAluno}.`;
+    } else {
+        return `❌ Aluno ${nome} não foi encontrado na lista.`;
+    }
+}
+
+// Testes da função
+console.log(buscarMedia("João"));     // ✅ O aluno João tem média final de 10.
+console.log(buscarMedia("ANA"));      // ✅ O aluno ANA tem média final de 7.5.
+console.log(buscarMedia("Pedro"));    // ❌ Aluno Pedro não foi encontrado na lista.
+</body>
+</html>
